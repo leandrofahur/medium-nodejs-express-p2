@@ -3,8 +3,9 @@ const express = require("express");
 
 //step 02: create a variable to access all the express funcitonalities.
 const app = express();
+app.use(express.json({ extended: false }));
 
-// step 04: call the router setting up the route:
+// step 04: call the router setting up the route.
 app.use("/user", require("./routes/user"));
 
 app.get("/", (req, res) => {
